@@ -8,4 +8,6 @@
 !/pkg/
 !/go.mod
 !/go.sum
+!/glance.yml
+!/start.sh
 !main.go
