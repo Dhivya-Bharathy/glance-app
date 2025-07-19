@@ -11,10 +11,6 @@ FROM alpine:3.21
 
 WORKDIR /app
 COPY --from=builder /app/glance .
-COPY --from=builder /app/glance.yml .
-COPY --from=builder /app/start.sh .
-
-RUN chmod +x start.sh
 
 EXPOSE 8080/tcp
-ENTRYPOINT ["./glance", "--config", "glance.yml"]
+ENTRYPOINT ["./glance"]
