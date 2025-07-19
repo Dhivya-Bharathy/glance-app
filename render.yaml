@@ -2,8 +2,10 @@ services:
   - type: web
     name: glance-dashboard
     env: go
-    buildCommand: go build -o glance .
+    buildCommand: go mod download && go build -o glance .
     startCommand: ./glance
     envVars:
       - key: PORT
-        value: 8080 
+        value: 8080
+      - key: CONFIG_PATH
+        value: glance.yml 
