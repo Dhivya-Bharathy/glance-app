@@ -17,4 +17,4 @@ COPY --from=builder /app/start.sh .
 RUN chmod +x start.sh
 
 EXPOSE 8080/tcp
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT ["./glance", "--config", "glance.yml"]
